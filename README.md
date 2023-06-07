@@ -1,9 +1,22 @@
-<p align="center">
-  <img width="25%" src="https://github.com/Shinyhero36.png" />
-</p>
-<p align="center">
-  <b> ~ Shinyhero36's dot files ~ </b>
-</p>
+<div align="center">
+  <img width="150" height="150" src="https://github.com/Shinyhero36.png" alt="Logo">
+  <br />
+  <h1 align="center">
+    Hyprland 11
+  </h1>
+  <p>
+    <i>A Windows 11 look for Hyprland</i>
+  </p>
+</div>
+
+> NOTE: This is under development.
+> It is not recommended to use this config for a daily driver.
+
+<br>
+
+<img src="./preview.png" alt="Preview" />
+
+<br>
 
 <div align="center">
 	<a href="https://github.com/Shinyhero36/dotfiles/stargazers">
@@ -18,9 +31,30 @@
 </div>
 
 
-## Hyprland 11
+## :memo: Details
 
-Hyprand with Windows 11 looks
+- **OS**: [Arch Linux](https://archlinux.org/)
+- **Compositor**: [Hyprland](https://hyprland.org/)
+- **Widgets**: [Eww](https://elkowar.github.io/eww/)
+- **Wallpapers**: [WallpaperHub](https://www.wallpaperhub.app/wallpapers/9256)
+- **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
+- **Fetch script**: [Rxfetch](https://github.com/Mangeshrex/rxfetch)
+- **Fonts**:
+
+## :construction: Installation
+
+```bash
+yay -S ...
+```
+
+
+## :keyboard: Keybinds
+
+All keybinds can be found in [keybinds.conf](config/hypr/keybinds.conf)
+
+| Keybind | Action |
+| --- | --- |
+| `Super + Enter` | Open terminal |
 
 ---
 
