@@ -1,0 +1,15 @@
+.acrylic {
+  @if $theme == 'light' {
+    background: rgba($shell_base_light, 0.7);
+    background-image: url("images/textures/acrylic.png");
+    background-blend-mode: luminosity;
+    color: $black;
+  } @else if $theme == 'dark' {
+    background: rgba($shell_base_dark, 0.7);
+    background-image: url("images/textures/acrylic.png");
+    background-blend-mode: luminosity;
+    color: $white;
+  } @else {
+    background-color: red;
+  }
+}

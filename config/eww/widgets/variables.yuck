@@ -1,0 +1,15 @@
+(defvar theme "light")
+
+; Animations
+
+
+; Listener variables
+(deflisten notification_listener :initial "{\"show\": \"no\", \"content\": \"\"}" "./scripts/notifier")
+;(deflisten volume "./scripts/volume")
+(deflisten taskbar "./scripts/taskbar")
+
+; Polling variables
+;(defpoll time :interval "5s" `date +'{"date": "%d/%m", "hour": "%H", "minute": "%M", "monthname": "%B", "day": "%A", "year": "%Y"}'`)
+(defpoll battery :interval "5s" :initial "{}" "./scripts/battery")
+;(defpoll network :interval "5s" :initial "{}" "./scripts/network")
+(defpoll weather :interval "1h" :initial "{ 'temperature': 0, 'windspeed': 0, 'description': 'Not available', icon: 'not-available.svg' }" "python ./scripts/weather.py")

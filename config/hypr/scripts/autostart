@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# Draw wallpaper
+hyprpaper &
+
+# Open a terminal
+alacritty &
+
+# Eww
+$HOME/.config/eww/scripts/start &

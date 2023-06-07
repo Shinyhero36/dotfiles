@@ -1,0 +1,13 @@
+@import "styles/variables.scss";
+
+@import "styles/dark-scheme.scss";
+@import "styles/light-scheme.scss";
+
+@import "styles/common.scss";
+
+@import "styles/taskbar.scss";
+@import "styles/bar.scss";
+
+* {
+  all: unset;
+}

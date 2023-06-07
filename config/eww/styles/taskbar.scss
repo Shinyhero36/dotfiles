@@ -1,0 +1,76 @@
+@mixin taskbar-item {
+  @if $theme == "dark" {
+    background-color: rgba($white, 0.07);
+    border: 1px solid rgba($white, 0.13);
+  } @else if $theme == "light" {
+    background-color: rgba($white, 0.5);
+    border: 1px solid rgba($black, 0.125);
+  }
+  border-radius: $rounded-md;
+}
+
+
+/**********************************
+ *           Programs
+ **********************************/
+.taskbar-program {
+  &.active, &:hover {
+    @include taskbar-item;
+  }
+}
+
+.taskbar-program-indicator {
+  &.focused {
+    margin-top: 37px;
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: $blue;
+    border-radius: 3px;
+  }
+
+  &.opened {
+    margin-top: 37px;
+    margin-left: 17px;
+    margin-right: 17px;
+    background-color: $gray;
+    border-radius: 3px;
+  }
+}
+
+/**********************************
+ *        Keyboard Layout
+ **********************************/
+.debug {
+  border: 1px solid red;
+}
+
+/**********************************
+ *           Weather
+ **********************************/
+.weather {
+  &:hover {
+    @include taskbar-item;
+  }
+}
+
+.content {
+  padding: 4px 7px;
+}
+
+.weather-value {
+  @if $theme == "dark" {
+    color: $white;
+  } @else if $theme == "light" {
+    color: $black;
+  }
+  font-size: 12px;
+}
+
+.weather-description {
+  @if $theme == "dark" {
+    color: rgba($white, 0.786);
+  } @else if $theme == "light" {
+    color: rgba($black, 0.6063);
+  }
+  font-size: 12px;
+}

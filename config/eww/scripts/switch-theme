@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+eww_yuck="$HOME/.config/eww/widgetsmodules/variables.yuck"
+eww_scss="$HOME/.config/eww/styles/variables.scss"
+hyprpaper="$HOME/.config/hypr/hyprpaper.conf"
+
+
+switch_eww() {
+  if grep "theme: \"dark\"" "$eww_scss"; then
+    sed -i 's/theme: "dark"/theme: "light"/g' "$eww_scss"
+    sed -i 's/theme "dark"/theme "light"/g' "$eww_yuck"
+  else
+    sed -i 's/theme: "light"/theme: "dark"/g' "$eww_scss"
+    sed -i 's/theme "light"/theme "dark"/g' "$eww_yuck"
+
+  fi
+}
+
+switch_paper() {
+  if grep -q "dark" $hyprpaper; then
+    sed -i 's/dark/light/g' $hyprpaper
+  else
+    sed -i 's/light/dark/g' $hyprpaper
+  fi
+  killall hyprpaper
+  hyprpaper &
+}
+
+
+switch_eww
+switch_paper 1>/dev/null

@@ -1,0 +1,59 @@
+;##################### Widgets #########################
+(include "./widgets/variables.yuck")
+(include "./widgets/taskbar.yuck")
+(include "./widgets/quicksettings.yuck")
+(include "./widgets/weather.yuck")
+
+;##################### Windows #########################
+
+
+;#######################################################
+(defwidget left []
+  (box
+    :space-evenly false
+    (weather)
+  )
+)
+
+(defwidget center []
+  (box
+    :space-evenly false
+    :spacing 4
+    (taskbar)
+  )
+)
+
+(defwidget right []
+  (box
+    :halign "end"
+    :spacing 10
+    :space-evenly false
+    (label :text "${battery.percentage}")
+  )
+)
+
+(defwidget bar []
+  (centerbox
+    :class "acrylic bar"
+    :height 48
+    :valign "center"
+    (left)
+    (center)
+    (right)
+  )
+)
+
+(defwindow bar
+    :stacking "fg"
+    :wm-ignore true
+    :monitor 0
+    :exclusive true
+    :geometry (geometry
+        :x "0%"
+        :y "0%"
+        :width "100%"
+        :height "48px"
+        :anchor "bottom center"
+    )
+    (bar)
+)

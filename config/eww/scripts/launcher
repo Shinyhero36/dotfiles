@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+volume_control_opened=$(eww get open_volume_flyout)
+
+volume_control() {
+  if [[ $1 == "show" ]]; then
+    eww open volume_window
+    eww update open_volume_flyout=true
+    sleep 1
+    eww close volume_window
+    eww update open_volume_flyout=false
+  fi
+}
+
+
+if [[ $1 == "volume" ]]; then volume_control $2; fi

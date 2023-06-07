@@ -1,0 +1,24 @@
+(defwidget weather []
+  (eventbox
+    :class "weather"
+    :width 140
+    :height 40
+    :valign "center"
+    (box
+      :space-evenly "false"
+      :spacing 12
+      :class "content"
+      (image
+        :path "images/weather-icons/${weather.icon}"
+        :image-width 35
+        :image-height 35
+      )
+      (box
+        :orientation "v"
+        :space-evenly "false"
+        (label :class "weather-value" :text "${weather.temperature}°C" :xalign 0)
+        (label :class "weather-description" :text "${weather.description}" :xalign 0)
+      )
+    )
+  )
+)
