@@ -16,6 +16,7 @@
       (box
         :orientation "v"
         :space-evenly "false"
+        :valign "center"
         (label :class "weather-value" :text "${weather.temperature}°C" :xalign 0)
         (label :class "weather-description" :text "${weather.description}" :xalign 0)
       )
