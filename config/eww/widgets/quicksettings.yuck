@@ -1,0 +1,22 @@
+(defwidget quicksettings []
+  (eventbox
+    (box
+      :halign "center"
+      :valign "center"
+      (box
+        :space-evenly "false"
+        :spacing 4
+        (image
+          :path "images/svg/${theme}/vol${volume.muted == 'true' ? 'mute' : '${round(volume.value / 33, 0)}'}.svg"
+          :image-width 20
+          :image-height 20
+        )
+        (image
+          :path "images/svg/${theme}/bat${battery.status == 'Charging' ? 'charge' : '${round(battery.percentage / 10, 0)}'}.svg"
+          :image-width 20
+          :image-height 20
+        )
+      )
+    )
+  )
+)

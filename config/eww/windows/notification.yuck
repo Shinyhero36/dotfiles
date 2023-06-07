@@ -1,0 +1,57 @@
+(defwindow notification
+  :monitor 0
+  :geometry (geometry
+    :x "20px"
+    :y "20px"
+    :width "400px"
+    :height "137px"
+    :anchor "bottom right"
+  )
+  :stacking "fg"
+  (notification)
+)
+
+(defwidget notification []
+  (revealer
+    :transition "slideup"
+    :reveal "${reveal_notification}"
+    (eventbox
+      :class "acrylic notification"
+      :onclick "${EWW_CMD} update reveal_notification=false"
+      (box
+        :space-evenly false
+        :orientation "v"
+        (box ; Header
+          :space-evenly false
+          :spacing 10
+          :height 40
+          :class "header"
+          (image
+            :path "images/svg/windows.svg"
+            :image-width 16
+            :image-height 16
+          )
+          (label
+            :text "Windows"
+            :class "app-name"
+          )
+        )
+        (box ; Content
+          :orientation "v"
+          :space-evenly false
+          :spacing 4
+          :class "content"
+          :height "100%"
+          (label
+            :xalign 0
+            :text "This features has not been added yet."
+            :class "summary"
+          )
+          (label :text "It seems like this function is still unimplemented and therefore cannot be used. There is no guarantee that this feature will ever be implemented, but it can always happen." :wrap true)
+        )
+        ;(box ; Footer 
+        ;)
+      )
+    )
+  )
+)

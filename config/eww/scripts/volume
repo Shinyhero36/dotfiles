@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+SINK="@DEFAULT_SINK@"
+
+volume() {
+  pactl get-sink-volume $SINK | awk '{print $5}' | sed 's/[%|]//g'
+}
+
+is_muted() {
+  pactl get-sink-mute $SINK | grep -q "yes" && echo "true" || echo "false"
+}
+
+
+
+listen() {
+  echo "{ \"value\": $(volume), \"muted\": \"$(is_muted)\" }"
+  pactl subscribe | while read -r line; do
+    if [[ $line == *"'change' on sink"* ]]; then
+      echo "{ \"value\": $(volume), \"muted\": \"$(is_muted)\" }"
+    fi
+  done
+}
+
+if [[ $1 == "listen" ]]; then listen done; fi
+

@@ -6,14 +6,16 @@ hyprpaper="$HOME/.config/hypr/hyprpaper.conf"
 
 
 switch_eww() {
+  pkill eww
   if grep "theme: \"dark\"" "$eww_scss"; then
     sed -i 's/theme: "dark"/theme: "light"/g' "$eww_scss"
     sed -i 's/theme "dark"/theme "light"/g' "$eww_yuck"
   else
     sed -i 's/theme: "light"/theme: "dark"/g' "$eww_scss"
     sed -i 's/theme "light"/theme "dark"/g' "$eww_yuck"
-
   fi
+  eww daemon
+  eww open bar
 }
 
 switch_paper() {

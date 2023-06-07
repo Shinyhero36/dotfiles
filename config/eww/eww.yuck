@@ -5,6 +5,7 @@
 (include "./widgets/weather.yuck")
 
 ;##################### Windows #########################
+(include "./windows/notification.yuck")
 
 
 ;#######################################################
@@ -28,6 +29,7 @@
     :halign "end"
     :spacing 10
     :space-evenly false
+    (quicksettings)
     (label :text "${battery.percentage}")
   )
 )
