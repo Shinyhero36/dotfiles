@@ -1,9 +1,40 @@
+(defwidget windows-button []
+  (eventbox
+    :class "taskbar-program"
+    :onclick "$HOME/.config/wofi/programs.sh"
+    :width 40
+    :height 40
+    (image
+      :path "images/svg/windows.svg"
+      :image-width 25
+      :image-height 25
+    )
+  )
+)
+
+(defwidget workspaces []
+  (eventbox
+    :class "taskbar-program"
+    :onclick ""
+    :width 40
+    :height 40
+    (image
+      :path "images/svg/workspace.svg"
+      :image-width 25
+      :image-height 25
+    )
+  )
+)
+
+
 (defwidget taskbar []
   (box
     :orientation "h"
     :space-evenly false
     :valign "center"
     :spacing 4
+    (windows-button)
+    (workspaces)
     (for task in taskbar
       (overlay
         (eventbox
