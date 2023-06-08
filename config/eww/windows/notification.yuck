@@ -47,7 +47,10 @@
             :text "This features has not been added yet."
             :class "summary"
           )
-          (label :text "It seems like this function is still unimplemented and therefore cannot be used. There is no guarantee that this feature will ever be implemented, but it can always happen." :wrap true)
+          (label
+            :text "It seems like this function is still unimplemented and therefore cannot be used. There is no guarantee that this feature will ever be implemented, but it can always happen."
+            :wrap true
+          )
         )
         ;(box ; Footer 
         ;)
