@@ -40,6 +40,7 @@
 - **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
 - **Fetch script**: [Rxfetch](https://github.com/Mangeshrex/rxfetch)
 - **Fonts**:
+  - [Segoe UI Variable](https://learn.microsoft.com/en-us/windows/apps/design/downloads/#fonts)
 
 ## :construction: Installation
 
