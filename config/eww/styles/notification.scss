@@ -1,5 +1,6 @@
 .notification {
   border-radius: 7px;
+  margin-bottom: 20px; // Reveal starts at the top of the bar
 }
 
 .header {
@@ -19,6 +20,6 @@
   font-size: 14px;
 }
 
-.content {
+.notification-content {
   padding: 0px 15px 15px;
 }

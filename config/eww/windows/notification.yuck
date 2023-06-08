@@ -2,9 +2,7 @@
   :monitor 0
   :geometry (geometry
     :x "20px"
-    :y "20px"
     :width "400px"
-    :height "137px"
     :anchor "bottom right"
   )
   :stacking "fg"
@@ -15,10 +13,11 @@
   (revealer
     :transition "slideup"
     :reveal "${reveal_notification}"
+    :duration "200ms"
     (eventbox
-      :class "acrylic notification"
       :onclick "${EWW_CMD} update reveal_notification=false"
       (box
+        :class "notification acrylic"
         :space-evenly false
         :orientation "v"
         (box ; Header
@@ -40,14 +39,14 @@
           :orientation "v"
           :space-evenly false
           :spacing 4
-          :class "content"
-          :height "100%"
+          :class "notification-content"
           (label
             :xalign 0
             :text "This features has not been added yet."
             :class "summary"
           )
           (label
+            :xalign 0
             :text "It seems like this function is still unimplemented and therefore cannot be used. There is no guarantee that this feature will ever be implemented, but it can always happen."
             :wrap true
           )
