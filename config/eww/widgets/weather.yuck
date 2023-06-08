@@ -5,9 +5,9 @@
     :height 40
     :valign "center"
     (box
-      :space-evenly "false"
+      :space-evenly false
       :spacing 12
-      :class "content"
+      :class "weather-content"
       (image
         :path "images/weather-icons/${weather.icon}"
         :image-width 35
