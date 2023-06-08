@@ -36,6 +36,7 @@
 - **OS**: [Arch Linux](https://archlinux.org/)
 - **Compositor**: [Hyprland](https://hyprland.org/)
 - **Widgets**: [Eww](https://elkowar.github.io/eww/)
+- **Notifications**: [Eww](https://elkowar.github.io/eww/) + [Tiramisu](https://github.com/Sweets/tiramisu)
 - **Wallpapers**: [WallpaperHub](https://www.wallpaperhub.app/wallpapers/9256)
 - **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
 - **Fetch script**: [Rxfetch](https://github.com/Mangeshrex/rxfetch)
