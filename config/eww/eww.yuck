@@ -3,6 +3,7 @@
 (include "./widgets/taskbar.yuck")
 (include "./widgets/quicksettings.yuck")
 (include "./widgets/weather.yuck")
+(include "./widgets/clock.yuck")
 
 ;##################### Windows #########################
 (include "./windows/notification.yuck")
@@ -31,6 +32,7 @@
     :space-evenly false
     (quicksettings)
     (label :text "${battery.percentage}")
+    (clock)
   )
 )
 

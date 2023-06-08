@@ -74,3 +74,20 @@
   }
   font-size: 12px;
 }
+
+/**********************************
+ *           Clock
+ **********************************/
+.clock {
+  &:hover {
+    @include taskbar-item;
+  }
+}
+
+.clock-content {
+  padding: 3px 3px 3px 8px;
+}
+
+.clock-label {
+  font-size: 13px;
+}

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+full_time() {
+  date +%H:%M
+}
+
+full_date() {
+  date +%d/%m/%Y
+}
+
+echo "{ \"full_time\": \"$(full_time)\", \"full_date\": \"$(full_date)\" }"

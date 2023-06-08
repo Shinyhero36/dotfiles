@@ -1,0 +1,23 @@
+(defwidget clock []
+  (eventbox
+    :class "clock"
+    :width 68
+    :height 40
+    :valign "center"
+    (box
+      :class "clock-content"
+      :orientation "v"
+      :space-evenly false
+      (label
+        :xalign 1
+        :class "clock-label"
+        :text "${time.full_time}"
+      )
+      (label
+        :xalign 1
+        :class "clock-label"
+        :text "${time.full_date}"
+      )
+    )
+  )
+)

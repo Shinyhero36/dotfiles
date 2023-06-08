@@ -2,8 +2,6 @@
 
 (defvar reveal_notification false)
 
-; Animations
-
 
 ; Listener variables
 (deflisten notification_listener :initial "{\"show\": \"no\", \"content\": \"\"}" "./scripts/notifier")
@@ -11,8 +9,6 @@
 (deflisten taskbar "./scripts/taskbar")
 
 ; Polling variables
-;(defpoll time :interval "5s" `date +'{"date": "%d/%m", "hour": "%H", "minute": "%M", "monthname": "%B", "day": "%A", "year": "%Y"}'`)
 (defpoll battery :interval "5s" :initial "{}" "./scripts/battery")
-;(defpoll network :interval "5s" :initial "{}" "./scripts/network")
-
+(defpoll time :interval "5s" :initial "{}" "./scripts/time")
 (defpoll weather :interval "30min" :initial "{ 'temperature': 0, 'windspeed': 0, 'description': 'Not available', icon: 'not-available.svg' }" "python ./scripts/weather.py")
