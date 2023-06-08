@@ -33,6 +33,7 @@
           (label
             :text "Windows"
             :class "app-name"
+            :text "${notification.source}"
           )
         )
         (box ; Content
@@ -42,12 +43,12 @@
           :class "notification-content"
           (label
             :xalign 0
-            :text "This features has not been added yet."
+            :text "${notification.summary}"
             :class "summary"
           )
           (label
             :xalign 0
-            :text "It seems like this function is still unimplemented and therefore cannot be used. There is no guarantee that this feature will ever be implemented, but it can always happen."
+            :text "${notification.body}"
             :wrap true
           )
         )

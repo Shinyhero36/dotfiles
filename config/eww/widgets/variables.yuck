@@ -7,6 +7,7 @@
 (deflisten notification_listener :initial "{\"show\": \"no\", \"content\": \"\"}" "./scripts/notifier")
 (deflisten volume "./scripts/volume listen")
 (deflisten taskbar "./scripts/taskbar")
+(deflisten notification "./scripts/notification")
 
 ; Polling variables
 (defpoll battery :interval "5s" :initial "{}" "./scripts/battery")
