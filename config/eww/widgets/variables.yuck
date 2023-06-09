@@ -12,4 +12,4 @@
 ; Polling variables
 (defpoll battery :interval "5s" :initial "{}" "./scripts/battery")
 (defpoll time :interval "5s" :initial "{}" "./scripts/time")
-(defpoll weather :interval "30min" :initial "{ 'temperature': 0, 'windspeed': 0, 'description': 'Not available', icon: 'not-available.svg' }" "python ./scripts/weather.py")
+(defpoll weather :interval "30min" :initial "{ 'temperature': 0, 'windspeed': 0, 'description': 'Not available', 'icon': 'not-available.svg' }" "python ./scripts/weather.py")

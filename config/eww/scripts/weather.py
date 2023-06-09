@@ -75,7 +75,7 @@ def find_icon(weather_code: int, windspeed: float, day: bool):
         case 85 | 86:  # Slight, Heavy snow shower
             return "snowflake.svg"
         case 95:  # Thunderstorm
-            return f"thunderstorm-{'day' if day else 'night'}.svg"
+            return f"thunderstorms-{'day' if day else 'night'}.svg"
         case 96 | 99:  # Thunderstorm with slight, heavy hail
             return f"thunderstorm-{'day' if day else 'night'}-rain.svg"
         case _:
