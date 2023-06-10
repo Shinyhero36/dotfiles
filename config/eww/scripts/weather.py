@@ -7,7 +7,7 @@ LAT = 43.60
 TODAY = datetime.now().strftime("%Y-%m-%d")
 HH = datetime.now().strftime("%H")
 
-URL = f"https://api.open-meteo.com/v1/forecast?latitude={LAT}&longitude={LON}&hourly=temperature_2m,windspeed_10m&daily=weathercode,sunrise,sunset&start_date={TODAY}&end_date={TODAY}&timezone=auto"
+URL = f"https://api.open-meteo.com/v1/forecast?latitude={LAT}&longitude={LON}&hourly=temperature_2m,weathercode&daily=sunrise,sunset&start_date={TODAY}&end_date={TODAY}&timezone=auto"
 
 
 def is_day(sunrise: str, sunset: str):
@@ -24,29 +24,17 @@ def is_day(sunrise: str, sunset: str):
     return sunrise < now < sunset
 
 
-def is_windy(speed: float):
-    """Check if it's windy
-
-    Args:
-        speed (int): wind speed in km/h
-    """
-    return speed > 33.0
-
-
-def find_icon(weather_code: int, windspeed: float, day: bool):
+def find_icon(weather_code: int, day: bool):
     """Select the icon to display based on the weather code
 
     Args:
         weather_code (int): the weather code
-        windspeed (float): the wind speed in km/h
         day (bool): if it's day or night
 
     Note:
         More info on weather codes: https://open-meteo.com/en/docs
         Icons are from: https://bas.dev/work/meteocons
     """
-    if is_windy(windspeed):
-        return "wind.svg"
     match weather_code:
         case 0:  # Clear sky
             return f"clear{'-day' if day else '-night'}.svg"
@@ -146,18 +134,16 @@ def get_weather_data():
     r = requests.get(URL)
     data = r.json()
     temp = round(int(data["hourly"]["temperature_2m"][int(HH)]))
-    windspeed = round(int(data["hourly"]["windspeed_10m"][int(HH)]))
-    weather_code = data["daily"]["weathercode"][0]
+    weather_code = data["hourly"]["weathercode"][int(HH)]
 
     SUNRISE = data["daily"]["sunrise"][0]
     SUNSET = data["daily"]["sunset"][0]
 
     day = is_day(SUNRISE, SUNSET)
-    icon = find_icon(weather_code, windspeed, day)
+    icon = find_icon(weather_code, day)
 
     return {
         "temperature": temp,
-        "windspeed": windspeed,
         "description": description(weather_code),
         "icon": icon,
     }
