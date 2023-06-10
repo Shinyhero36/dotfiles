@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 
-open_notification() {
-  eww update reveal_notification=true
-}
-
-close_notification() {
-  eww update reveal_notification=false
-}
-
 tiramisu -j | while read -r line; do
   echo $line
-  open_notification
+  $HOME/.config/eww/scripts/launcher toggle notification
   sleep 5
-  close_notification
+  $HOME/.config/eww/scripts/launcher toggle notification
 done
