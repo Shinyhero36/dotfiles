@@ -1,0 +1,23 @@
+(defwindow widgets-board
+  :monitor 0
+  :geometry (geometry
+    :y "20px"
+    :height "992px"
+    :anchor "top left"
+  )
+  :stacking "fg"
+  (widgets-board)
+)
+
+(defwidget widgets-board []
+  (revealer
+    :transition "slideright"
+    :reveal "${reveal_widgets_board}"
+    :duration "200ms"
+    (box
+      :class "acrylic widgets-board"
+      :space-evenly false
+      :width 900
+    )
+  )
+)

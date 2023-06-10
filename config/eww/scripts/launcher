@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+toggle() {
+  if [[ $1 == "notification" ]]; then toggle_notification; fi
+  if [[ $1 == "widgets-board" ]]; then toggle_widgets_board; fi
+}
+
+toggle_notification() {
+  state=$(eww get reveal_notification)
+  if [[ $state == "true" ]]; then
+    eww update reveal_notification=false
+  else
+    eww update reveal_notification=true
+  fi
+}
+
+toggle_widgets_board() {
+  state=$(eww get reveal_widgets_board)
+  if [[ $state == "true" ]]; then
+    eww update reveal_widgets_board=false
+    sleep 0.5
+    eww close widgets-board
+  else
+    eww open widgets-board
+    eww update reveal_widgets_board=true
+  fi
+}
+
+if [[ $1 == "toggle" ]]; then toggle $2; fi

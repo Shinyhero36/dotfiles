@@ -1,6 +1,7 @@
 (defwidget weather []
   (eventbox
     :class "weather"
+    :onclick "$HOME/.config/eww/scripts/launcher toggle widgets-board &"
     :width 140
     :height 40
     :valign "center"

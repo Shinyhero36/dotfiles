@@ -7,7 +7,7 @@
 
 ;##################### Windows #########################
 (include "./windows/notification.yuck")
-
+(include "./windows/widgets-board.yuck")
 
 ;#######################################################
 (defwidget left []
