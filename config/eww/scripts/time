@@ -8,4 +8,19 @@ full_date() {
   date +%d/%m/%Y
 }
 
-echo "{ \"full_time\": \"$(full_time)\", \"full_date\": \"$(full_date)\" }"
+day_month() {
+  date "+%d %B"
+}
+
+greeting() {
+  h=$(date +"%H")
+  if [[ $h < 12 ]]; then
+    echo "Good morning"
+  elif [[ $h < 18 ]]; then
+    echo "Good afternoon"
+  else
+    echo "Good evening"
+  fi
+}
+
+echo "{ \"full_time\": \"$(full_time)\", \"full_date\": \"$(full_date)\", \"day_month\": \"$(day_month)\", \"greet\": \"$(greeting)\" }"

@@ -17,7 +17,85 @@
     (box
       :class "acrylic widgets-board"
       :space-evenly false
-      :width 900
+      :width 800
+      :orientation "v"
+      :spacing 20
+      (box
+        (box
+          :space-evenly false
+          :orientation "v"
+          (label
+            :xalign 0
+            :class "widgets-board-time-label"
+            :text "${time.day_month}"
+          )
+          (label
+            :xalign 0
+            :class "widgets-board-greet-label"
+            :text "${time.greet}"
+          )
+        )
+        (box
+          :space-evenly false
+          :spacing 8
+          :valign "center"
+          :halign "end"
+          (eventbox
+            :class "widgets-board-button"
+            :width 40
+            :height 40
+            (image
+              :path "images/svg/${theme}/reload.svg"
+              :image-width 16
+              :image-height 16
+            )
+          )
+          (eventbox
+            :class "widgets-board-button"
+            :width 40
+            :height 40
+            (image
+              :path "images/svg/${theme}/cog.svg"
+              :image-width 16
+              :image-height 16
+            )
+          )
+          (image
+            :path "images/me.png"
+            :image-width 40
+            :image-height 40
+          )
+        )
+      )
+      ; CONTENT
+      (scroll
+        :hexpand true
+        :vexpand true
+        :vscroll true
+        (box
+          :orientation "v"
+          ;(box
+          ;  :height 300
+          ;  :style "background-color: red;"
+          ;)
+          ;(box
+          ;  :height 300
+          ;  :style "background-color: green;"
+          ;)
+          ;(box
+          ;  :height 300
+          ;  :style "background-color: blue;"
+          ;)
+          ;(box
+          ;  :height 300
+          ;  :style "background-color: lightblue;"
+          ;)
+          ;(box
+          ;  :height 300
+          ;  :style "background-color: beige;"
+          ;)
+        )
+      )
     )
   )
 )

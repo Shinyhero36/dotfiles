@@ -1,4 +1,26 @@
 .widgets-board {
   border-radius: 7px;
   margin-left: 20px;
+  padding: 20px;
+}
+
+.widgets-board-time-label {
+  font-size: 14px;
+}
+
+.widgets-board-greet-label {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.widgets-board-button {
+  &:hover {
+    @if $theme == "light" {
+      background-color: rgba($white, 0.5);
+      border-radius: 7px;
+    } @else {
+      background-color: rgba($black, 0.13);
+      border-radius: 7px;
+    }
+  }
 }
