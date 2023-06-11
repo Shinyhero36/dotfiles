@@ -43,6 +43,15 @@
 - **Fonts**:
   - [Segoe UI Variable](https://learn.microsoft.com/en-us/windows/apps/design/downloads/#fonts)
 
+## :camera_flash: Gallery
+
+<details>
+<summary>Click to see more screenshots</summary>
+
+<img src="./screenshots/widgets-board.png" alt="Widgets board" />
+
+</details>
+
 ## :construction: Installation
 
 ```bash
