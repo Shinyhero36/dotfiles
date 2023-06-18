@@ -2,7 +2,7 @@
 
 tiramisu -j | while read -r line; do
   echo $line
-  $HOME/.config/eww/scripts/launcher toggle notification
+  $HOME/.config/eww/scripts/launcher open notification
   sleep 5
-  $HOME/.config/eww/scripts/launcher toggle notification
+  $HOME/.config/eww/scripts/launcher close notification
 done

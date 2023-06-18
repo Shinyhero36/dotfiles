@@ -10,12 +10,13 @@
 
 (defwidget notification []
   (revealer
-    :transition "slideleft"
+    ;:transition "slideleft"
+    :transition "slideup"
     :reveal "${reveal_notification}"
     :duration "200ms"
+    :width 400
     (eventbox
       :onclick "${EWW_CMD} update reveal_notification=false"
-      :width 400
       (box
         :class "notification acrylic"
         :space-evenly false
