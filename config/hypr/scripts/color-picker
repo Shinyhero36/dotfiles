@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+color=$(hyprpicker -a)
+
+if [[ $color != "" ]]; then
+  notify-send -a "Hyprpicker" "Hyprpicker" "Here is your color: ${color}.\n The color has been copied into the clipboard !"
+fi
+
+echo "Color: ${color}"
