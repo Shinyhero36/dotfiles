@@ -24,3 +24,23 @@
     }
   }
 }
+
+.widget {
+  border-radius: 7px;
+}
+
+.widget-header {
+  padding: 12px 16px;
+}
+
+.widget-content {
+  padding: 0px 16px 16px;
+}
+
+.battery-info {
+  @if $theme == "light" {
+    background-color: $white;
+  } @else {
+    background-color: $black;
+  }
+}

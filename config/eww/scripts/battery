@@ -3,6 +3,13 @@
 status=$(cat /sys/class/power_supply/BAT0/status)
 capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 
+time_left() {
+  # get the time left to full charge or discharge in HH hours MM minutes
+  HH=$(acpi | awk '{print $5}' | awk '{print substr($0,1,2)}')
+  MM=$(acpi | awk '{print $5}' | awk '{print substr($0,4,2)}')
+  echo "${HH} hours ${MM} minutes"
+}
+
 if [[ "$status" == "Charging" && "$capacity" -gt 80 ]]; then
   hyprctl notify 1 5000 "rgb(00ff00)" "Battery is full"
 fi
@@ -11,4 +18,4 @@ if [[ "$status" == "Discharging" && "$capacity" -le 30 ]]; then
   hyprctl notify 1 5000 "rgb(ff0000)" "Battery low (30%). Please charge"
 fi
 
-echo "{\"percentage\": ${capacity}, \"status\": \"${status}\"}"
+echo "{\"percentage\": ${capacity}, \"status\": \"${status}\", \"time_left\": \"$(time_left)\" }"

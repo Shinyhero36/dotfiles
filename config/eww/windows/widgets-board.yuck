@@ -17,7 +17,7 @@
     (box
       :class "acrylic widgets-board"
       :space-evenly false
-      :width 800
+      :width 924
       :orientation "v"
       :spacing 20
       (box
@@ -73,27 +73,101 @@
         :vexpand true
         :vscroll true
         (box
-          :orientation "v"
-          ;(box
-          ;  :height 300
-          ;  :style "background-color: red;"
-          ;)
-          ;(box
-          ;  :height 300
-          ;  :style "background-color: green;"
-          ;)
-          ;(box
-          ;  :height 300
-          ;  :style "background-color: blue;"
-          ;)
-          ;(box
-          ;  :height 300
-          ;  :style "background-color: lightblue;"
-          ;)
-          ;(box
-          ;  :height 300
-          ;  :style "background-color: beige;"
-          ;)
+          :class "widgets-board-content"
+          :space-evenly false
+          :spacing 24
+          ; feeds
+          (box
+            :class "debug"
+          )
+          ; widgets
+          (box
+            :space-evenly false
+            :orientation "v"
+            :spacing 8
+            :width 300
+            (battery-info)
+            (battery-info)
+            (battery-info)
+            (battery-info)
+            (battery-info)
+            (battery-info)
+            (battery-info)
+            (battery-info)
+          )
+        )
+      )
+    )
+  )
+)
+
+(defwidget battery-info []
+  (box
+    :orientation "v"
+    :space-evenly false
+    :class "widget battery-info"
+    :height 161
+    ;header
+    (box
+      :space-evenly false
+      :height 48
+      :class "widget-header"
+      (box
+        :space-evenly false
+        :spacing 8
+        :hexpand true
+        (image
+          :path "images/svg/${theme}/bat0.svg"
+          :image-width 24
+          :image-height 24
+        )
+        (label :text "Battery Info")
+      )
+      (image
+        :path "images/svg/${theme}/more.svg"
+        :image-width 24
+        :image-height 24
+      )
+    )
+    ;content
+    (box
+      :orientation "v"
+      :class "widget-content"
+      :space-evenly false
+      (box
+        (label
+          :class "widget-battery-percentage-label"
+          :xalign 0
+          :text "${battery.percentage}%"
+        )
+        (progress
+          :class "battery-bar"
+          :value "${battery.percentage}"
+        )
+      )
+      (box
+        :space-evenly false
+        :spacing 8
+        :orientation "v"
+        (box
+          (label
+            :xalign 0
+            :text "Battery Life Time:"
+          )
+          (label
+            :xalign 1
+            :text "${battery.time_left}"
+          )
+        )
+        (box
+          (label
+            :xalign 0
+            :text "Status:"
+          )
+          (label
+            :xalign 1
+            :text "${EWW_BATTERY['BAT0']['status']}"
+          )
         )
       )
     )
